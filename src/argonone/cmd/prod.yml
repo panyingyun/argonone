@@ -1,0 +1,8 @@
+log:
+  filename: /var/log/argonone.log
+  maxSize: 500
+  maxBackups: 3
+  maxAge: 3
+  level: "debug"
+  stdout: false
+

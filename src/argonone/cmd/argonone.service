@@ -1,0 +1,13 @@
+[Unit]
+Description=Argonone Fan Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Restart=on-failure
+RestartSec=5s
+ExecStart=/usr/local/bin/argonone -c /etc/argonone/prod.yml
+
+[Install]
+WantedBy=multi-user.target
