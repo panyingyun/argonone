@@ -117,8 +117,24 @@ sudo systemctl stop argonone.service
 sudo systemctl restart argonone.service
 ```
 
+### 8、Check Result
 
-### 8、Thanks To
+**When CPU Temp from 41.381℃ to 39.92℃ ,and fan speed from 10% to stop.**
+
+```shell
+{"level":"INFO","ts":"2020-06-07 11:20:34","msg":"Raspberry Pi 4 Argonone Fan"}
+{"level":"INFO","ts":"2020-06-07 11:20:34","msg":"Thanks to https://gobot.io"}
+{"level":"INFO","ts":"2020-06-07 11:20:35","msg":"Current Temp is 41.381 ℃"}
+{"level":"INFO","ts":"2020-06-07 11:20:35","msg":"FANOn10 ..."}
+{"level":"INFO","ts":"2020-06-07 11:20:40","msg":"Current Temp is 40.894 ℃"}
+{"level":"INFO","ts":"2020-06-07 11:20:40","msg":"FANOn10 ..."}
+{"level":"INFO","ts":"2020-06-07 11:20:45","msg":"Current Temp is 39.92 ℃"}
+{"level":"INFO","ts":"2020-06-07 11:20:45","msg":"FANOff ..."}
+{"level":"INFO","ts":"2020-06-07 11:20:50","msg":"Current Temp is 39.92 ℃"}
+{"level":"INFO","ts":"2020-06-07 11:20:50","msg":"FANOff ..."}
+```
+
+### 9、Thanks To
 
 - https://github.com/Elrondo46/argonone
 - http://www.waveshare.net/wiki/PI4-CASE-ARGON-ONE
