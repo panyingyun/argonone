@@ -13,19 +13,20 @@ Enjoy it.
 ### 3、Boot config file(very important,if not do this, application can not run normal.)
 
 *open i2c dev driver*
+
 ```shell
-=============vim /boot/config.txt and add next info ============
+### vim /boot/config.txt and add next info
 dtparam=i2c_arm=on
 dtparam=i2c-1=on
 
-=============vim /etc/modules-load.d/modules.conf and add next info ============
+### vim /etc/modules-load.d/modules.conf and add next info
 i2c-dev
 i2c-bcm2835
 i2c-bcm2708
 
-=============vim /etc/modprobe.d/custom.conf and add next info ============
-==============Very Important Config Here(Change I2C Baudrate)==============
-====If we use default baudrate(110K)，i2cdetect can not find ARGON-ONE=====
+### vim /etc/modprobe.d/custom.conf and add next info
+### Very Important Config Here(Change I2C Baudrate)
+### If we use default baudrate(110K)，i2cdetect can not find ARGON-ONE
 options i2c_bcm2708 baudrate=32000
 options i2c_bcm2835 baudrate=32000
 ```
@@ -33,6 +34,7 @@ options i2c_bcm2835 baudrate=32000
 ### 4、Reboot && check config work or not 
 
  - (1) check i2c dirver work 
+
 ```shell
 [root@pinas2 modprobe.d]# lsmod | grep i2c
 i2c_bcm2708            16384  0 
@@ -40,12 +42,14 @@ i2c_bcm2835            16384  0
 i2c_dev                20480  0 
 ```
  - (2) check i2c baudrate(32000 is OK)
+
 ```shell
 [root@pinas2 tools]# cat /sys/module/i2c_bcm2708/parameters/baudrate
 32000
 ```
 
  - (3) check ARGON-ONE device('1a' is device address for fan) 
+
 ```shell
 [root@pinas2 tools]# yum install i2c-tools -y
 [root@pinas2 tools]# i2cdetect -y 1 
@@ -61,6 +65,7 @@ i2c_dev                20480  0
 ```
 
 - (4) check cpu temp 
+
 ```shell
 [root@pinas2 tools]# cat /sys/class/thermal/thermal_zone0/temp
 44790
@@ -96,12 +101,14 @@ argonone -c prod.yml
 ### 7、Auto-run when reboot OS 
 
 Run build_arm64.sh, it will autorun argonone when reboot os
+
 ```shell
 chmod 755 build_arm64.sh 
 sudo sh build_arm64.sh 
 ```
 
 Other shell cmd 
+
 ```shell
 // enable 
 sudo systemctl enable argonone.service
