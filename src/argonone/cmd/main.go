@@ -16,16 +16,15 @@ import (
 
 const (
 	cronSpec     = "@hourly"     //Every hour
-	cronSpecTest = "*/5 * * * *" //Every 5s
+	cronSpecTest = "*/30 * * * *" //Every 30s
 )
-
+var fan *dev.Fan
+var cpu *dev.CPUTemp
 //CPU温度	风扇转速
 //40度	10%
 //50度	50%
 //60度	100%
 func CheckCPUTempAndFanStatus() {
-	fan := dev.NewFan()
-	cpu := dev.NewCPUTemp()
 	err := cpu.FetchTemperate()
 	if err != nil {
 		log.Default().Error("err = ", err)
@@ -62,6 +61,8 @@ func run(c *cli.Context) error {
 	}
 	logger.Info("Raspberry Pi 4 Argonone Fan")
 	logger.Info("Thanks to https://gobot.io")
+	fan = dev.NewFan()
+	cpu = dev.NewCPUTemp()
 	cron := cron.New()
 	cron.AddFunc(cronSpecTest, CheckCPUTempAndFanStatus)
 	cron.Start()
