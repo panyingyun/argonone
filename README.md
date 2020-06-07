@@ -1,5 +1,7 @@
 # PI4-CASE-ARGON-ONE
-Argon One Service and Control Service  coding by golang  for Raspberry Pi 4B/4B+ centos7.7
+Argon One Service and Control Service  coding by golang  for Raspberry Pi 4B/4B+ centos7.7 or other Pi Linux System
+
+Enjoy it.
 
 ### 1、Hardware 
 - Raspberry Pi 4 Model B Rev 1.2
