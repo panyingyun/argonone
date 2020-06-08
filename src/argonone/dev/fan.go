@@ -17,7 +17,7 @@ const (
 	I2cFanOn100 byte   = 0x64
 	I2cFanOn50  byte   = 0x32
 	I2cFanOn10  byte   = 0x0a
-	I2cFanOff   byte   = 0xff
+	I2cFanOff   byte   = 0x01
 	I2cFan      string = "/dev/i2c-1"
 )
 
