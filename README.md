@@ -16,19 +16,14 @@ Enjoy it.
 
 ```shell
 ### vim /boot/config.txt and add next info
-dtparam=i2c_arm=on
-dtparam=i2c-1=on
+dtparam=i2c_arm=on,i2c_arm_baudrate=32000
+dtparam=i2s=on
+dtparam=i2c_baudrate=32000
 
 ### vim /etc/modules-load.d/modules.conf and add next info
 i2c-dev
 i2c-bcm2835
 i2c-bcm2708
-
-### vim /etc/modprobe.d/custom.conf and add next info
-### Very Important Config Here(Change I2C Baudrate)
-### If we use default baudrate(110K)，i2cdetect can not find ARGON-ONE
-options i2c_bcm2708 baudrate=32000
-options i2c_bcm2835 baudrate=32000
 ```
 
 ### 4、Reboot && check config work or not 
