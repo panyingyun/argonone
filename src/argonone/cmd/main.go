@@ -21,8 +21,7 @@ const (
 var fan *dev.Fan
 var cpu *dev.CPUTemp
 //CPU温度	风扇转速
-//40度	10%
-//50度	50%
+//45度	50%
 //60度	100%
 func CheckCPUTempAndFanStatus() {
 	err := cpu.FetchTemperate()
@@ -35,7 +34,7 @@ func CheckCPUTempAndFanStatus() {
 	switch { //Just like switch true
 	case temp > 60000:
 		_ = fan.FANOn100()
-	case temp > 50000:
+	case temp > 45000:
 		_ = fan.FANOn50()
 	//case temp > 40000:
 	//	_ = fan.FANOn10()
