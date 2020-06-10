@@ -15,8 +15,9 @@ import (
 )
 
 const (
+	//Spec:https://www.cnblogs.com/wangyuyu/p/4230742.html
 	cronSpec     = "@hourly"     //Every hour
-	cronSpecTest = "* 0/1 * * *" //Every minute
+	cronSpecTest = "0 0/2 * * *" //Every minute
 )
 var fan *dev.Fan
 var cpu *dev.CPUTemp
