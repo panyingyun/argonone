@@ -23,7 +23,9 @@ github.com/mitchellh/mapstructure
 github.com/pelletier/go-toml
 # github.com/robfig/cron v1.2.0
 ## explicit
-github.com/robfig/cron
+# github.com/robfig/cron/v3 v3.0.1
+## explicit
+github.com/robfig/cron/v3
 # github.com/russross/blackfriday/v2 v2.0.1
 github.com/russross/blackfriday/v2
 # github.com/shurcooL/sanitized_anchor_name v1.0.0

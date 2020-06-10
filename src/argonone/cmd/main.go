@@ -9,14 +9,14 @@ import (
 	"argonone/dev"
 	"argonone/log"
 
-	"github.com/robfig/cron"
+	cron "github.com/robfig/cron/v3"
 	"github.com/spf13/viper"
 	"github.com/urfave/cli"
 )
 
 const (
 	cronSpec     = "@hourly"     //Every hour
-	cronSpecTest = "*/30 * * * *" //Every 30s
+	cronSpecTest = "* 0/1 * * *" //Every minute
 )
 var fan *dev.Fan
 var cpu *dev.CPUTemp
@@ -31,13 +31,11 @@ func CheckCPUTempAndFanStatus() {
 	}
 	temp := cpu.TemperateInt()
 	log.Default().Infof("Current Temp is %v ℃", cpu.Temperate())
-	switch { //Just like switch true
+	switch {
 	case temp > 60000:
 		_ = fan.FANOn100()
 	case temp > 45000:
 		_ = fan.FANOn50()
-	//case temp > 40000:
-	//	_ = fan.FANOn10()
 	default:
 		_ = fan.FANOff()
 	}
