@@ -80,7 +80,7 @@ sudo apt install -y golang
 git clone git@github.com:panyingyun/argonone.git
 
 //build 
-cd argonone/src/cmd
+cd argonone/cmd
 
 //build arm
 CGO_ENABLED=0 GOOS=linux GOARCH=arm go build  -o argonone
