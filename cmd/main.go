@@ -35,7 +35,7 @@ func CheckCPUTempAndFanStatus() {
 	switch {
 	case temp > 60000:
 		_ = fan.FANOn100()
-	case temp > 45000:
+	case temp > 50000:
 		_ = fan.FANOn50()
 	default:
 		_ = fan.FANOff()
