@@ -1,6 +1,8 @@
 #!/bin/bash
 go build -o argonone
 
+sudo systemctl stop argonone.service
+
 sudo cp argonone /usr/local/bin/
 sudo mkdir -p  /etc/argonone/
 sudo cp prod.yml /etc/argonone/
